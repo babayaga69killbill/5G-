@@ -121,7 +121,7 @@ NAS (Non-access Stratum): The NAS layer handles communication between the user's
 
 <img width="924" height="537" alt="image" src="https://github.com/user-attachments/assets/f21a45d6-e11a-4995-9491-4905f9e06bb5" />
 
-**GBR(Guarantee Bit Rate):**GBR provides a dedicated network resource to ensure a constant data rate for an application.  This is essential for services that need a stable and reliable connection, such as:
+**GBR(Guarantee Bit Rate):** GBR provides a dedicated network resource to ensure a constant data rate for an application.  This is essential for services that need a stable and reliable connection, such as:
 
 Voice and video calls 
 Live streaming 
@@ -143,3 +143,7 @@ File Sharing And Downloads
 **Reflective Mapping**, the device (UE) uses the same mapping for the uplink (UL) that it received in the downlink (DL).
 
 **Explicit Mapping**, This means the device is specifically told which radio bearer to use for a particular QoS flow in the uplink, regardless of the downlink mapping
+
+## Packet Data Convergence Protocol(PDCP):
+
+
