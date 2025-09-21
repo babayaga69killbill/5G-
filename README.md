@@ -146,4 +146,21 @@ File Sharing And Downloads
 
 ## Packet Data Convergence Protocol(PDCP):
 
+Header Compression: This reduces the size of IP packet headers to save bandwidth, especially for small data packets like those used in voice calls.
+
+Ciphering and Integrity Protection PDCP: provides security by encrypting data to prevent eavesdropping and adding a code to verify the data's origin.
+
+Routing and Duplication of Split Bearers: In dual connectivity mode, where a device is connected to two base stations simultaneously, PDCP can split data across both connections to increase data rates or duplicate data to improve reliability.
+
+In-sequence Delivery: For applications that require packets to arrive in the correct order, such as video streaming, PDCP ensures that packets are delivered in sequence
+
+## Radio Link,Contrl Layer(RLC):
+
+The RLC layer is part of the 5G NR protocol stack and sits between the Packet Data Convergence Protocol (PDCP) layer and the Medium Access Control (MAC) layer. Its two primary functions are:
+
+Segmentation: Breaking down larger data packets into smaller ones suitable for transmission over the radio interface. 
+
+ARQ (Automatic Repeat Request) - Retransmissions: Ensuring reliable data delivery by retransmitting lost or corrupted packets
+
+<img width="856" height="569" alt="image" src="https://github.com/user-attachments/assets/f1dbe303-5470-4f85-8114-02ffb73b776e" />
 
