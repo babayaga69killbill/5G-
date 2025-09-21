@@ -90,3 +90,56 @@ PCF:session management policies,non session management policies,charging
 Non Standalone(NSA):Non-Standalone (NSA) architecture involves the coexistence of both 4G and 5G network components. This approach allows operators to leverage their existing 4G infrastructure to roll out 5G services more quickly. 
 
 Standalone(SA):A Standalone (SA) architecture uses a single generation of technology for both the radio access and the core network
+
+## The RAN Protocol Stack
+<img width="979" height="585" alt="image" src="https://github.com/user-attachments/assets/e1dd2e5f-379d-44b8-842e-b5fa0610de69" />
+
+PHY (Physical Layer): This layer is responsible for the actual transmission of data over the wireless channel. It handles processes like channel coding, modulation, and utilizing multiple antennas to ensure efficient communication.
+
+MAC (Medium Access Control Layer): The MAC layer manages retransmission of data in case of errors. It's also in charge of multiplexing/demultiplexing data from different sources and scheduling data transmissions.
+
+RLC (Radio Link Control Layer): This layer performs segmentation of larger data packets into smaller ones for transmission and reassembles them at the receiving end. It also includes an Automatic Repeat Request (ARQ) mechanism for error correction.
+
+PDCP (Packet Data Convergence Protocol): The PDCP layer is responsible for header compression to reduce the amount of data sent over the air. It also handles ciphering for security and removes duplicate data packets.
+
+SDAP (Service Data Adaptation Protocol): This top layer of the user plane stack is responsible for managing Quality of Service (QoS). It maps different types of data to the appropriate radio bearers to ensure that services like voice calls or video streaming receive the necessary priority.
+
+## Control Plane Protocol Stack
+
+The control plane protocol stack manages the connection and communication between the user's device and the network. It includes many of the same lower layers as the user plane (PDCP, RLC, MAC, PHY), but has two unique upper layers:
+
+RRC (Radio Resource Control): The RRC layer manages the radio resources of the device. This includes broadcasting system information, establishing and managing radio bearers, and configuring measurements for the device to report back to the network.
+
+NAS (Non-access Stratum): The NAS layer handles communication between the user's device and the core network. Its responsibilities include authentication, security, and procedures for when the device is in idle mode.
+
+<img width="963" height="515" alt="image" src="https://github.com/user-attachments/assets/44d90abb-c178-434e-bf05-1aeddb0aa046" />
+
+### For Example
+<img width="940" height="537" alt="image" src="https://github.com/user-attachments/assets/04a061ef-758c-456e-b508-b7c42f59dae1" />
+
+## Service Data Adaptation Protocol(SDAP)
+
+<img width="924" height="537" alt="image" src="https://github.com/user-attachments/assets/f21a45d6-e11a-4995-9491-4905f9e06bb5" />
+
+**GBR(Guarantee Bit Rate):**GBR provides a dedicated network resource to ensure a constant data rate for an application.  This is essential for services that need a stable and reliable connection, such as:
+
+Voice and video calls 
+Live streaming 
+Real-time gaming
+
+**NGBR(Non Guarantee Bit Rate)**:Non-GBR is used for applications that don't require a constant data rate and can tolerate some delays or fluctuations in speed such as:
+
+Web Browsing
+Email
+File Sharing And Downloads
+
+<img width="957" height="540" alt="image" src="https://github.com/user-attachments/assets/aa976dcf-a971-451a-95dd-711fc55cfaa1" />
+
+### Multiplexing\Demultiplexing
+
+**Multiplexing** is the process of combining multiple signals into a single signal to transmit over a shared medium. **Demultipiplexing** is the reverse process, separating the combined signal back into its original individual signals. In 5G networks, this is managed by the Service Data Adaptation Protocol (SDAP) to handle diverse types of data traffic efficiently.
+
+### Two Types Of Mapping 
+**Reflective Mapping**, the device (UE) uses the same mapping for the uplink (UL) that it received in the downlink (DL).
+
+**Explicit Mapping**, This means the device is specifically told which radio bearer to use for a particular QoS flow in the uplink, regardless of the downlink mapping
